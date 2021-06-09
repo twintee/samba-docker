@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+
+  samba:
+    build: .
+    image: ffbi-samba:latest
+    container_name: ffbi-samba
+    ports:
+      - 139:139
+      - 445:445
+    volumes:
+      - ./smb.conf:/etc/samba/smb.conf
+    restart: always
+
